@@ -21,7 +21,7 @@ header.main-header {
 }
 
 nav.navbar {
-    background-color: rgba(0, 0, 0, 0); /* Fully transparent navbar */
+    background-color: rgb(148, 148, 187); /* Fully transparent navbar */
     transition: background-color 0.3s ease; /* Smooth transition */
 }
 
