@@ -21,7 +21,7 @@ header.main-header {
 }
 
 nav.navbar {
-    background-color: transparent; /* Fully transparent navbar */
+    background-color: black; /* Fully transparent navbar */
     transition: background-color 0.3s ease; /* Smooth transition */
 }
 
@@ -32,7 +32,7 @@ header .navbar-brand {
 
 header .navbar-brand em {
     font-size: 24px;
-    color: #fff;
+    color: white;
     font-weight: 600;
     margin-left: 10px;
 }
@@ -57,11 +57,18 @@ header .navbar-brand img {
 
 .navbar-nav .nav-link {
     font-size: 18px;
-    color: #fff;
+    color: black; /* Ensure nav links are black */
+    text-decoration: none;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #f39c12;
+    color: black; /* Keep the color black when hovered */
+}
+
+/* Navbar background color when scrolled */
+.navbar.scrolled {
+    background-color: #007bff; /* Blue background */
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 /* Main Banner Section */
@@ -157,12 +164,6 @@ footer a {
 
 footer a:hover {
     color: #e67e22;
-}
-
-/* Navbar background color when scrolled */
-.navbar.scrolled {
-    background-color: #007bff; /* Blue background */
-    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 /* Responsive Styles */
