@@ -1,204 +1,270 @@
 /* General Styles */
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-    overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Header Styling with Transparent Navbar */
+header.main-header {
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Navbar background color */
+nav.navbar {
+  background-color: transparent;
+}
+
+/* When scrolled, change navbar background to blue */
+header.scrolled nav.navbar {
+  background-color: blue !important;
+}
+
+header .navbar-brand {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+header .navbar-brand em {
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+  margin-left: 10px;
+  text-align: center;
+}
+
+/* Logo image */
+header .navbar-brand img {
+  max-width: 100px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* Navbar Styling */
+.navbar-nav {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 15px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 18px;
+  color: white !important; /* Solid white color */
+  text-decoration: none;
+  font-weight: bold; /* Bold font */
+  text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5); /* 3D effect with blue shadow */
+  background-image: linear-gradient(to bottom right, #0000ff, #ffffff); /* Gradient blue to white */
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f39c12;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f39c12 !important;
+  text-shadow: 3px 3px 5px rgba(0, 0, 255, 0.7); /* Intense 3D effect */
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.navbar-nav .nav-link:hover::after {
+  transform: scaleX(1); /* Underline effect on hover */
+}
+
+/* Main Banner Section */
+.main-banner {
+  position: relative;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* 3D effect on Banner Video */
+#bg-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(0.6); /* Darken the video */
+}
+
+/* 3D Thank You Section */
+.thank-you-section {
+  background-color: black;
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+}
+
+.thank-you {
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  transform: perspective(500px) rotateY(15deg);
+  animation: thankyouAnimation 3s ease-in-out infinite;
+}
+
+@keyframes thankyouAnimation {
+  0%, 100% {
+    transform: perspective(500px) rotateY(15deg);
   }
-  
-  /* Header Styling with Transparent Navbar */
-  header.main-header {
-    padding: 10px;
+  50% {
+    transform: perspective(500px) rotateY(-15deg);
+  }
+}
+
+/* Section with Gradient Background */
+section.gradient-background {
+  background: linear-gradient(to right, #00bcd4, #009688);
+  padding: 80px 0;
+  color: white;
+  text-align: center;
+}
+
+section.gradient-background h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+section.gradient-background p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00bcd4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Footer Section */
+footer {
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: #f39c12;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #e67e22;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Glow effect */
+}
+
+/* Mobile Styles: Navbar Slide from Left */
+@media (max-width: 768px) {
+  .navbar-collapse {
     position: fixed;
     top: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav.navbar {
+    left: 0;
+    width: 250px;
+    height: 100%;
     background-color: black;
-    transition: background-color 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
   }
-  
-  header .navbar-brand {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
+
+  .navbar-collapse.show {
+    transform: translateX(0);
   }
-  
-  header .navbar-brand em {
-    font-size: 18px;
-    color: white;
-    font-weight: 600;
-    margin-left: 10px;
-    text-align: center;
+
+  .navbar-toggler-icon {
+    background-color: white;
   }
-  
-  /* Logo image */
-  header .navbar-brand img {
-    max-width: 100px;
-    height: auto;
-    margin-right: 10px;
-  }
-  
-  /* Navbar Styling */
+
   .navbar-nav {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
   .navbar-nav .nav-item {
-    margin-right: 15px;
+    margin: 15px 0;
   }
-  
+
   .navbar-nav .nav-link {
+    color: white !important;
     font-size: 18px;
-    color: white;
     text-decoration: none;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5);
+    background-image: linear-gradient(to bottom right, #0000ff, #ffffff);
+    -webkit-background-clip: text;
+    color: transparent;
   }
-  
+
   .navbar-nav .nav-link:hover {
     color: #f39c12;
   }
-  
-  /* Main Banner Section */
-  .main-banner {
-    position: relative;
-    height: 100vh;
-    background-color: black;
+
+  .navbar-toggler {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: 1px solid #f39c12;
   }
-  
-  #bg-video {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+
+  header .navbar-brand {
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  
-  /* 3D Thank You Section */
-  .thank-you-section {
-    background-color: black;
-    padding: 100px 0;
-    text-align: center;
-    color: white;
-  }
-  
-  .thank-you {
-    font-size: 60px;
-    font-weight: bold;
-    letter-spacing: 5px;
-    transform: perspective(500px) rotateY(15deg);
-    animation: thankyouAnimation 3s ease-in-out infinite;
-  }
-  
-  @keyframes thankyouAnimation {
-    0%, 100% {
-      transform: perspective(500px) rotateY(15deg);
-    }
-    50% {
-      transform: perspective(500px) rotateY(-15deg);
-    }
-  }
-  
-  /* Footer Section */
-  footer {
-    background-color: #000;
-    color: white;
-    padding: 20px;
+
+  header .navbar-brand em {
+    font-size: 16px;
+    margin-left: 0;
     text-align: center;
   }
-  
-  footer a {
-    color: #f39c12;
-    text-decoration: none;
-    font-weight: bold;
+
+  header .navbar-brand img {
+    max-width: 80px;
   }
-  
-  footer a:hover {
-    color: #e67e22;
-  }
-  
-  /* Media Query for Portrait Mode */
-  @media (max-width: 768px) and (orientation: portrait) {
-    /* Hide the video */
-    .main-banner video {
-      display: none;
-    }
-  
-    /* Show the image instead of the video */
-    .main-banner {
-      background: url('pic1.jpg') no-repeat center center;
-      background-size: cover;
-    }
-  }
-  
-  /* Mobile Styles: Navbar Slide from Left */
-  @media (max-width: 768px) {
-    .navbar-collapse {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 250px;
-      height: 100%;
-      background-color: black;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-    }
-  
-    .navbar-collapse.show {
-      transform: translateX(0);
-    }
-  
-    .navbar-toggler-icon {
-      background-color: white;
-    }
-  
-    .navbar-nav {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .navbar-nav .nav-item {
-      margin: 15px 0;
-    }
-  
-    .navbar-nav .nav-link {
-      color: white;
-      font-size: 18px;
-      text-decoration: none;
-    }
-  
-    .navbar-nav .nav-link:hover {
-      color: #f39c12;
-    }
-  
-    .navbar-toggler {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      border: 1px solid #f39c12;
-    }
-  
-    header .navbar-brand {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    header .navbar-brand em {
-      font-size: 16px;
-      margin-left: 0;
-      text-align: center;
-    }
-  
-    header .navbar-brand img {
-      max-width: 80px;
-    }
-  }
-  
+}
