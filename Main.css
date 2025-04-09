@@ -1,10 +1,10 @@
 /* General Styles */
 body {
     font-family: 'Montserrat', sans-serif;
-    color: white; /* Set all text to white */
+    color: white;
     margin: 0;
     padding: 0;
-    background-color: #000; /* Set background to black */
+    background-color: #000;
     overflow-x: hidden;
 }
 
@@ -21,20 +21,23 @@ header.main-header {
 }
 
 nav.navbar {
-    background-color: black; /* Black navbar */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: black;
+    transition: background-color 0.3s ease;
 }
 
 header .navbar-brand {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping of text and logo */
+    justify-content: center; /* Center align logo and name */
 }
 
 header .navbar-brand em {
-    font-size: 24px;
-    color: white; /* White color for brand name */
+    font-size: 18px; /* Smaller font size on smaller screens */
+    color: white;
     font-weight: 600;
     margin-left: 10px;
+    text-align: center;
 }
 
 /* Logo image */
@@ -57,25 +60,25 @@ header .navbar-brand img {
 
 .navbar-nav .nav-link {
     font-size: 18px;
-    color: white; /* White navbar links */
+    color: white;
     text-decoration: none;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #f39c12; /* Slight hover effect with gold color */
+    color: #f39c12;
 }
 
 /* Navbar background color when scrolled */
 .navbar.scrolled {
-    background-color: black; /* Keep navbar black when scrolled */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: black;
+    transition: background-color 0.3s ease;
 }
 
 /* Main Banner Section */
 .main-banner {
     position: relative;
     height: 100vh;
-    background-color: black; /* Set main banner to black */
+    background-color: black;
 }
 
 #bg-video {
@@ -90,7 +93,7 @@ header .navbar-brand img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .header-text {
@@ -99,18 +102,18 @@ header .navbar-brand img {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white; /* White text in header */
+    color: white;
 }
 
 .header-text h2 {
     font-size: 40px;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Subtle shadow for readability */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 .main-button a {
-    background-color: #f39c12; /* Gold button */
-    color: black; /* Black text in button */
+    background-color: #f39c12;
+    color: black;
     padding: 15px 30px;
     text-decoration: none;
     font-size: 18px;
@@ -120,15 +123,15 @@ header .navbar-brand img {
 }
 
 .main-button a:hover {
-    background-color: #e67e22; /* Slightly darker gold when hovered */
+    background-color: #e67e22;
 }
 
 /* 3D Thank You Section */
 .thank-you-section {
-    background-color: black; /* Black background */
+    background-color: black;
     padding: 100px 0;
     text-align: center;
-    color: white; /* White text */
+    color: white;
 }
 
 .thank-you {
@@ -150,141 +153,96 @@ header .navbar-brand img {
 
 /* Footer Section */
 footer {
-    background-color: #000; /* Black footer */
-    color: white; /* White footer text */
+    background-color: #000;
+    color: white;
     padding: 20px;
     text-align: center;
 }
 
 footer a {
-    color: #f39c12; /* Gold links in footer */
+    color: #f39c12;
     text-decoration: none;
     font-weight: bold;
 }
 
 footer a:hover {
-    color: #e67e22; /* Darker gold on hover */
+    color: #e67e22;
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
-    /* Tablet adjustments */
-    header .navbar-nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header .navbar-nav .nav-item {
-        margin-bottom: 10px;
-    }
-
-    .header-text h2 {
-        font-size: 32px;
-    }
-
-    .main-button a {
-        font-size: 16px;
-        padding: 12px 24px;
-    }
-
-    /* Video Section */
-    .main-banner {
-        height: 70vh;
-    }
-
-    #bg-video {
-        height: 70vh;
-    }
-
-    .thank-you {
-        font-size: 50px;
-    }
-}
-
+/* Mobile Styles: Navbar Slide from Left */
 @media (max-width: 768px) {
-    /* Mobile: Stack header items */
-    header .navbar-nav {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: black;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+
+    .navbar-toggler-icon {
+        background-color: white;
+    }
+
+    .navbar-nav {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
-    /* Mobile: Adjust logo size */
-    header .navbar-brand img {
-        max-width: 80px;
+    .navbar-nav .nav-item {
+        margin: 15px 0;
     }
 
-    header .navbar-brand em {
+    .navbar-nav .nav-link {
+        color: white;
         font-size: 18px;
-        margin-left: 8px;
+        text-decoration: none;
     }
 
-    .header-text h2 {
-        font-size: 28px;
+    .navbar-nav .nav-link:hover {
+        color: #f39c12;
     }
 
-    .main-button a {
-        font-size: 16px;
-        padding: 12px 24px;
+    /* Move the navbar-toggler to the right side of the navbar */
+    .navbar-toggler {
+        position: absolute;
+        top: 15px;  /* Adjust the vertical position */
+        right: 15px;  /* Align to the right side */
+        border: 1px solid #f39c12; /* Optional: add a border for better visibility */
     }
 
-    .thank-you {
-        font-size: 40px;
+    /* Ensure navbar is fully accessible when in portrait mode */
+    .navbar-collapse.collapse {
+        display: block !important;
     }
 
-    /* Video Section */
-    .main-banner {
-        height: 60vh;
+    /* Adjust the navbar items for better spacing on smaller devices */
+    .navbar-nav .nav-item {
+        padding: 10px 0;
     }
 
-    #bg-video {
-        height: 60vh;
+    /* Adjust the school name/logo layout for mobile screens */
+    header .navbar-brand {
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center; /* Center the content */
     }
 
-    .video-overlay {
-        background: rgba(0, 0, 0, 0.7);
-    }
-
-    /* Footer adjustments */
-    footer {
-        padding: 10px;
-    }
-}
-
-/* Responsive adjustments for small mobile (portrait iPhones) */
-@media (max-width: 480px) {
-    /* Mobile header: Adjust font sizes */
     header .navbar-brand em {
-        font-size: 16px;
+        font-size: 16px; /* Make text smaller for mobile */
+        margin-left: 0; /* Adjust spacing */
+        text-align: center;
     }
 
-    .header-text h2 {
-        font-size: 22px;
-    }
-
-    .main-button a {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-
-    .thank-you {
-        font-size: 35px;
-    }
-
-    /* Adjust video and overlay */
-    .main-banner {
-        height: 50vh;
-    }
-
-    #bg-video {
-        height: 50vh;
-    }
-
-    .video-overlay {
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    /* Adjust footer */
-    footer {
-        padding: 15px;
+    /* Adjust logo size on mobile */
+    header .navbar-brand img {
+        max-width: 80px;  /* Reduce the size of the logo */
+        margin-right: 10px;
     }
 }
