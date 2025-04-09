@@ -6,10 +6,10 @@ body {
     padding: 0;
     background-color: #000;
     overflow-x: hidden;
-}
-
-/* Header Styling with Transparent Navbar */
-header.main-header {
+  }
+  
+  /* Header Styling with Transparent Navbar */
+  header.main-header {
     padding: 10px;
     position: fixed;
     top: 0;
@@ -18,186 +18,187 @@ header.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-nav.navbar {
+  }
+  
+  nav.navbar {
     background-color: black;
     transition: background-color 0.3s ease;
-}
-
-header .navbar-brand {
+  }
+  
+  header .navbar-brand {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping of text and logo */
-    justify-content: center; /* Center align logo and name */
-}
-
-header .navbar-brand em {
-    font-size: 18px; /* Smaller font size on smaller screens */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  header .navbar-brand em {
+    font-size: 18px;
     color: white;
     font-weight: 600;
     margin-left: 10px;
     text-align: center;
-}
-
-/* Logo image */
-header .navbar-brand img {
+  }
+  
+  /* Logo image */
+  header .navbar-brand img {
     max-width: 100px;
     height: auto;
     margin-right: 10px;
-}
-
-/* Navbar Styling */
-.navbar-nav {
+  }
+  
+  /* Navbar Styling */
+  .navbar-nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
-
-.navbar-nav .nav-item {
+  }
+  
+  .navbar-nav .nav-item {
     margin-right: 15px;
-}
-
-.navbar-nav .nav-link {
+  }
+  
+  .navbar-nav .nav-link {
     font-size: 18px;
     color: white;
     text-decoration: none;
-}
-
-.navbar-nav .nav-link:hover {
+  }
+  
+  .navbar-nav .nav-link:hover {
     color: #f39c12;
-}
-
-/* Navbar background color when scrolled */
-.navbar.scrolled {
-    background-color: black;
-    transition: background-color 0.3s ease;
-}
-
-/* Main Banner Section */
-.main-banner {
+  }
+  
+  /* Main Banner Section */
+  .main-banner {
     position: relative;
     height: 100vh;
     background-color: black;
-}
-
-#bg-video {
+  }
+  
+  #bg-video {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    display: block;
-}
-
-/* Default image should be hidden initially */
-.banner-image {
-    display: none; /* Hide image by default */
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-/* For Portrait Orientation */
-@media (orientation: portrait) {
-    /* Hide video when in portrait mode */
-    #bg-video {
-        display: none;
-    }
-
-    /* Show the image only when in portrait mode */
-    .banner-image {
-        display: block;
-    }
-}
-
-/* 3D Thank You Section */
-.thank-you-section {
+  }
+  
+  /* 3D Thank You Section */
+  .thank-you-section {
     background-color: black;
     padding: 100px 0;
     text-align: center;
     color: white;
-}
-
-.thank-you {
+  }
+  
+  .thank-you {
     font-size: 60px;
     font-weight: bold;
     letter-spacing: 5px;
     transform: perspective(500px) rotateY(15deg);
     animation: thankyouAnimation 3s ease-in-out infinite;
-}
-
-@keyframes thankyouAnimation {
+  }
+  
+  @keyframes thankyouAnimation {
     0%, 100% {
-        transform: perspective(500px) rotateY(15deg);
+      transform: perspective(500px) rotateY(15deg);
     }
     50% {
-        transform: perspective(500px) rotateY(-15deg);
+      transform: perspective(500px) rotateY(-15deg);
     }
-}
-
-/* Footer Section */
-footer {
+  }
+  
+  /* Footer Section */
+  footer {
     background-color: #000;
     color: white;
     padding: 20px;
     text-align: center;
-}
-
-footer a {
+  }
+  
+  footer a {
     color: #f39c12;
     text-decoration: none;
     font-weight: bold;
-}
-
-footer a:hover {
+  }
+  
+  footer a:hover {
     color: #e67e22;
-}
-
-/* Mobile Styles: Navbar Slide from Left */
-@media (max-width: 768px) {
+  }
+  
+  /* Media Query for Portrait Mode */
+  @media (max-width: 768px) and (orientation: portrait) {
+    /* Hide the video */
+    .main-banner video {
+      display: none;
+    }
+  
+    /* Show the image instead of the video */
+    .main-banner {
+      background: url('pic1.jpg') no-repeat center center;
+      background-size: cover;
+    }
+  }
+  
+  /* Mobile Styles: Navbar Slide from Left */
+  @media (max-width: 768px) {
     .navbar-collapse {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px;
-        height: 100%;
-        background-color: black;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background-color: black;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
     }
-
+  
     .navbar-collapse.show {
-        transform: translateX(0);
+      transform: translateX(0);
     }
-
+  
     .navbar-toggler-icon {
-        background-color: white;
+      background-color: white;
     }
-
+  
     .navbar-nav {
-        flex-direction: column;
-        align-items: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
     }
-
+  
     .navbar-nav .nav-item {
-        margin: 15px 0;
+      margin: 15px 0;
     }
-
+  
     .navbar-nav .nav-link {
-        color: white;
-        font-size: 18px;
-        text-decoration: none;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
     }
-
+  
     .navbar-nav .nav-link:hover {
-        color: #f39c12;
+      color: #f39c12;
     }
-
-    /* Move the navbar-toggler to the right side of the navbar */
+  
     .navbar-toggler {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        border: 1px solid #f39c12;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      border: 1px solid #f39c12;
     }
-}
+  
+    header .navbar-brand {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    header .navbar-brand em {
+      font-size: 16px;
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    header .navbar-brand img {
+      max-width: 80px;
+    }
+  }
+  
